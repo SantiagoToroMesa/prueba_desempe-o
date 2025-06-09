@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap'); /* Importa la fuente Poppins */
 
-/* Reset básico y configuración global de estilos */
+/* Basic reset and global style settings */
 *{
     margin: 0;
     padding: 0;
@@ -10,6 +10,7 @@
     outline: none;
     font-family: 'Poppins', sans-serif;
 }
+/* background image and size*/
 html, body{
     background-image: url("assets/fondo1.webp");
     background-repeat: no-repeat;
@@ -25,6 +26,7 @@ html, body{
         color: white;
     }
 }
+/* Fixed header with navigation and logo */
 header{
     top: 0;
     left: 0;
@@ -43,10 +45,15 @@ header{
     }
 
 }
+
+
 nav {
     display: flex;
     align-items: center;
 }
+
+/* Navigation and Links Settings */
+
 nav a{
     font-size: 3rem;
     color: whitesmoke;
@@ -55,10 +62,14 @@ nav a{
     font-weight: 500;
     border-bottom: 3px solid transparent;
 }
+
 nav a:hover{
     color: white;
     border-bottom: 3px solid #455ca5;
 }
+
+/* Main Logo Styles */
+
 .Logo{
     border-left: rgba(248, 248, 248, 0.38) 5px solid;
     font-size: 6rem;
@@ -68,6 +79,9 @@ nav a:hover{
 .Logo:hover{
     transform: scale(1.1)
 }
+
+/* Hero Section - Main Banner*/
+
 .hero{
     height: 75vh;
     background-color: whitesmoke;
@@ -86,12 +100,12 @@ nav a:hover{
     width: 30%;
 }
 .hero-container h1{
-    font-size: 7rem;
+    font-size: 6rem;
     font-weight: 700;
     line-height: 1.3;
 }
 .hero-container h3{
-    font-size: 5rem;
+    font-size: 4rem;
     margin-bottom: 1rem;
     font-weight: 700;
 }
@@ -104,6 +118,7 @@ nav a:hover{
     height: 40vh;
     border-radius: 20%;
     box-shadow: 5px 5px 10px #454545;
+    z-index: 100;
 }
 .hero-img{
     display: flex ;
@@ -112,7 +127,7 @@ nav a:hover{
 .social-icons{
     display: flex;
     position: relative;
-    margin-top: 2rem;
+    margin-top: 6rem;
     left: 30%;
     width: 40%;
     height: 2rem;
@@ -130,7 +145,9 @@ nav a:hover{
 }
 .social-icons a:hover{
     color: #343D5B;
+    transform: scale(1.1);
 }
+/*button to activate dark mode*/
 .switch {
     margin-left: 2rem;
     background: #343D5B;
@@ -171,5 +188,290 @@ nav a:hover{
     &::after {
         right: 0;
         left: unset;
+    }
+}
+
+/*menu hamburguer for phone media queries*/
+
+.hamburger {
+    display: none;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: white;
+    transition: all 0.3s ease-in-out;
+}
+.section-title{
+    text-align: center;
+    font-size: 7rem;
+    margin: 2rem 0;
+    color: white;
+    font-weight: bold;
+}
+.section-description{
+    margin: 4rem 0;
+    text-align: center;
+    font-size: 4rem;
+}
+
+/* Proyect grid with cards and hover effects */
+
+.proyectos {
+    width: 100%;
+    height: auto;
+    padding: 10rem 4rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    background-color: #f5f5f5;
+    min-height: 40vh;
+    body.dark &{
+        background-color: #1c1c1c;
+    }
+}
+
+/* Styles for individual product cards */
+
+.proyecto {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: show 1s ease forwards;
+    animation-range: entry 25% cover 50%;
+}
+
+.proyecto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.proyecto:hover img {
+    transform: scale(1.1);
+}
+
+.proyecto-overlay {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    flex-direction: column;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.proyecto:hover .proyecto-overlay {
+    transform: translateY(0);
+}
+
+.proyecto-overlay h3 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    color: #455ca5;
+}
+
+.proyecto-overlay p {
+    font-size: 2rem;
+    line-height: 1.4;
+}
+.proyecto-overlay a{
+    font-size: 4rem;
+    display: flex;
+    justify-content: center;
+    color: #455ca5;
+}
+.proyecto-overlay a:hover{
+    color: #ffffff;
+}
+/* Styles for the contact form: background, padding, and shadows */
+.contact-form {
+    background: rgba(0, 0, 0, 0.338);
+    padding: 5rem;
+    border-radius: 15px;
+}
+
+/* Spacing between form groups */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+/* Styles for form fields */
+.form-control {
+    width: 100%;
+    padding: 16px 20px;
+    border: 1px solid #e9ecef;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Styles for the form button */
+.botton{
+    display: block;
+    margin: 2rem auto 0 auto;
+    background-color: rgb(149, 119, 178);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    font-size: 2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+/* Form header with centering and size */
+.contact-form-header{
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: rgb(0, 0, 0);
+    body.dark & {
+        color: white;
+    }
+}
+@keyframes show {
+    /*projects animation*/
+    from {
+        opacity: 0;
+        scale: 10%;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        scale: 100%;
+        transform: translateY(0);
+    }
+}
+@media (max-width: 768px) {
+    /*display for moviles*/
+    html {
+        font-size: 55%;
+    }
+
+    header {
+        padding: 1rem 4%;
+    }
+
+    .hero {
+        flex-direction: column;
+        gap: 3rem;
+        padding-top: 10rem;
+    }
+    .hero-container{
+        align-self: start;
+        display: flex;
+        gap: 50%;
+    }
+    .hero-img img {
+        width: 90vw;
+        height: auto;
+    }
+
+    .hero-container h1 {
+        font-size: 4rem;
+    }
+
+    .hero-container h3 {
+        font-size: 2rem;
+    }
+
+    .social-icons {
+        position: static;
+        width: 100%;
+        margin: 2rem 0;
+    }
+
+    .proyectos {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1rem;
+    }
+    .projects-section{
+        flex-direction: column;
+    }
+    .proyecto {
+        flex-direction: column;
+        gap: 3rem;
+        width: 100%;
+        height: auto;
+    }
+
+    .contact-form {
+        width: 90%;
+        margin: 0 auto;
+    }
+    .hamburger {
+        display: block;
+        cursor: pointer;
+        z-index: 1000;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    nav {
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 50vh;
+        background: rgba(0, 0, 0, 0.9);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        transition: 0.5s ease-in-out;
+    }
+
+    nav.active {
+        left: 0;
+    }
+
+    nav a {
+        display: block;
+        font-size: 2rem;
+        margin: 4rem 0;
+        padding: 0.5rem 1.5rem;
+        width: auto;
+        text-align: center;
+        color: white;
+    }
+
+}
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+
+    .home-content h1 {
+        font-size: 3.5rem;
+    }
+
+    .home-content h3 {
+        font-size: 2rem;
     }
 }
